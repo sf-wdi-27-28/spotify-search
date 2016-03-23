@@ -1,1 +1,18 @@
 /* put custom styles in this file */
+/*button styles*/
+.btn{
+  width: 300px;
+  margin-top: 15px;
+}
+/*heading shadow*/
+h1{
+    text-shadow: 1px 1px 1px grey;
+    color: darkred;
+}
+/*searchbar title styles */
+label{
+  color: cornflowerblue;
+  font-size: 2em;
+  margin-top: 50px;
+  text-shadow: .5px .5px .5px grey;
+}

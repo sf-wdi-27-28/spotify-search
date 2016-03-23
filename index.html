@@ -18,6 +18,7 @@
   <!-- Note: using subresource integrity; see: https://en.wikipedia.org/wiki/Subresource_Integrity -->
   <script type="text/javascript" src="http://code.jquery.com/jquery-2.2.2.min.js" integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>
 
+
   <!-- handlebars -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
 
@@ -30,7 +31,16 @@
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <h1 class="text-center">Spotify Search</h1>
-        <div id="results"></div>
+        <div class="col-sm-4">
+					<form id="spotify-search" class="form-inline col-md-6 col-md-offset-3" type="GET" name="contact-form">
+						<label>Search Songs</label>
+						<input id="song" type="text" class="form-control songs-input" name="q" value="" placeholder="search songs">
+						<input type="submit" value="Search" class="btn btn-primary">
+					</form>
+  				</div>
+          <div id="results">
+          <div class="songs-gallery"></div>
+        </div>
       </div>
     </div>
   </div>
