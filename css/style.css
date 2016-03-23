@@ -3,3 +3,18 @@
   margin-top: 15px;
   margin-bottom: 10px;
 }
+
+.sub {
+  margin-bottom: 10px;
+}
+
+
+img {
+  width: 110%;
+  height: 110%;
+  margin-bottom: 5px
+}
+
+.song {
+  margin-left: -50px;
+}

@@ -38,13 +38,19 @@ function input() {
 
    function onSuccess(json) {
       console.log(json);
-      var trackResults = json.tracks.items;
-      trackResults.forEach(function(element) {
-             $("#results").append("<li>" + element.name + " by " + element.artists[0].name +  "</li>");
+      json.tracks.items.forEach(function(element) {
+            $("#results").append("<div class='row sub'>" + "<div class='col-xs-5 preview'>" + "<img src='"+ element.album.images[1].url + "'>" + "</div>" + "<div class='col-xs-2'></div>" + "<div class='col-xs-5 song'>" + "<strong>"+element.name+"</strong>" + " by " + element.artists[0].name + "</div>"+ "</div>");
+            // $(".row.sub").append("<div class='col-xs-4'></div>")
+            // $(".row").appead("<div class='col-xs-4'></div>")
+            // $(".row").appead("<div class='col-xs-4 song'></div>")
+            // $("#results").append("<div class='row sub'>" + "<img src='"+ element.album.images[1].url + "'>"  + "<strong>"+element.name+"</strong>" + " by " + element.artists[0].name + "</div>" );
+            // $(".song").append("<strong>"+element.name+"</strong>" + " by " + element.artists[0].name);
+            //  $(".image").append("<img src='"+ element.album.images[1].url + "'>");
+            // "<button type='button' class='btn btn-default btn-lg'>" + "<span class='glyphicons glyphicons-play'></span>" + "</button>"
              });
        }
 
-
+//element.album.images[0].url
 
 
    function onError(xhr, status, errorThrown) {
