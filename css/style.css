@@ -1,1 +1,10 @@
-/* put custom styles in this file */
+/*put custom styles in this file */
+input {
+    width: 500px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+button {
+  width: 500px;
+}
