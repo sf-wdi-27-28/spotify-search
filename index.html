@@ -26,10 +26,17 @@
 
 </head>
 <body>
-  <div class="container">
+  <div class="cosntainer">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <h1 class="text-center">Spotify Search</h1>
+          <div class="form-group">
+            <form>
+              <input type="hidden" name="type" value="track">
+              <input type="text" class="col-sm-12 form-control" name="q" value="" placeholder="Song Title"></input>
+              <input type="submit" class="btn btn-success col-sm-12 submitButton"></input>
+            </form>
+          </div>
         <div id="results"></div>
       </div>
     </div>
