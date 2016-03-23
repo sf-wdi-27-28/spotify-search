@@ -29,8 +29,15 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
+        <form>
         <h1 class="text-center">Spotify Search</h1>
-        <div id="results"></div>
+          <input type="text" class="form-control" name="q" value="" placeholder="Search for Song Title or Artist" class="search">
+          <br>
+          <input type="hidden" name="type" value="track">
+          <input type="submit" value="Search" class="btn btn-block btn-success">
+        </form>
+        <br>
+        <ul id="results"></ul>
       </div>
     </div>
   </div>
