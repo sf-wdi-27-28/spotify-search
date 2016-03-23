@@ -1,4 +1,25 @@
 /* put custom styles in this file */
-#loading {
-  display: none;
-};
+body {
+  background-color: #f3cf59;
+  width: 100%;
+  length: 100%
+}
+
+.text-center {
+  font-style: Avenir;
+  font-size: 50px;
+}
+
+#searchbox {
+  text-align: center;
+}
+
+/*#centerme {
+  display: block;
+  margin: 0 auto;
+}*/
+
+#giffy {
+  display: block;
+  margin: 0 auto;
+}

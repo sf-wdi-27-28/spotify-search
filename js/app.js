@@ -6,7 +6,6 @@ $(document).on('ready', function() {
   console.log('JS is loaded!');
 
   var spotifyForm = $('#spotify-form');//form used to search spotify API
-  var spotifySearch = $('#searchbox');//input field for searching tracks
   var spotifyResult = $('#results');//place to hold results in web page
 
   spotifyForm.on("submit", function(evt) {
@@ -37,8 +36,12 @@ function onSuccess(data) {
       previewUrl: result.preview_url
     };
 
-    var trackDiv = '<div><img src="' +trackInfo.image + '">' + '</div><br>' +
-    '<br><div>' + trackInfo.name + " by " + trackInfo.artist + '</div><br>';
+    var trackDiv =
+    '<br><br><div><strong>' + trackInfo.name + '</strong> by ' + trackInfo.artist + '<strong></div><br>' +
+    '<br><div><p><a href="' + trackInfo.previewUrl + '" target="_blank" class="btn btn-sm btn-default">Preview ' +
+	  '<span class="glyphicon glyphicon-play"></span></a></p></div><br>'+
+    '<br><div><img class="centerme" src="' +trackInfo.image + '">' + '</div><br>';
+
     $('#results').append(trackDiv);
   });
 }
