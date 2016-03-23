@@ -22,7 +22,7 @@ $(document).on('ready', function() {
 // and album art
     function onSuccess(data) {
       data.tracks.items.forEach(function(element) {
-        $("#tracks").append(element.artists.name + " - " +
+        $("#tracks").append(element.artists[0].name + " - " +
         element.name + "<p>" + '<img src="' +
         element.album.images[2].url + '">' + "</p>");
 
