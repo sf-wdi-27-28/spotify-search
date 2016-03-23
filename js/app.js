@@ -27,7 +27,7 @@ $(document).on('ready', function() {
     json.tracks.items.forEach( function(element){
       $('#results').append("<div>" + '<img src="' + element.album.images[2].url + '">' + " " + element.artists[0].name+ ", " + element.name + " " +'<a href="' + element.preview_url + "   "+
           '" target="_blank" class="btn btn-md btn-success">Preview ' + "</div>");
-      console.log(target);
+      console.log(element);
     });
 
   }
