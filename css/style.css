@@ -22,3 +22,7 @@ a{
 span{
   font-weight: bold;
 }
+
+.loading{
+  margin: 0 auto;
+}

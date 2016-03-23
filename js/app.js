@@ -11,18 +11,38 @@ $(document).on('ready', function() {
 
   $("#Spotify-Search").on("submit",function(event){
     event.preventDefault();
-    $.ajax({
-      method: 'GET',
-      url: spotifyApi,
-      data: $(this).serialize(),
-      success: onSuccess,
-      error: onError
-    });
+    // console.log($("#Spotify-Search.form-control").val());
+    // if($("#Spotify-Search.form-control").val()){
+      $.ajax({
+        method: 'GET',
+        url: spotifyApi,
+        data: $(this).serialize(),
+        success: onSuccess,
+        error: onError
+      });
+    // } else {
+    //   alert("Nothing was entered. Please type in a title name.");
+    // }
+  });
+
+  $(document).ajaxStart(function(){
+    $(".loading").toggleClass("hidden");
+  });
+
+  $(document).ajaxStop(function(){
+    $(".loading").toggleClass("hidden");
+  });
+
+  $(document).ajaxStop(function(){
+    if($("#results > div").length < 1){
+      $("#results").append('<div class="row songs text-center"><h1>Sorry, nothing was found.</h1></div>');
+    }
   });
 
 });
 
 function onSuccess(json){
+  console.log(json);
   removeSongList();
   createSongList(json);
 }
@@ -32,7 +52,7 @@ function onError(xhr, status, errorThrown){
 }
 
 function createSongList(json){
-  for(var i = 0; i < 20; i++){
+  for(var i = 0; i < json.tracks.items.length; i++){
     if(json.tracks.items[i].album.images[0]){
       var str = '<div class="row songs">' +
                 '<img class="img-responsive col-xs-2" src="' + json.tracks.items[i].album.images[0].url + '">' +
@@ -57,3 +77,7 @@ function removeSongList(){
     $(".songs").remove();
   }
 }
+
+function loading(){
+
+  }
