@@ -24,10 +24,11 @@ function searchTrack(){
 function onSuccess(json){
   console.log(json);
   $('#results').val(); //not working as expected
+  // also tried: $('#results').trigger("reset");
   var trackResults = json.tracks.items;
   trackResults.forEach(function(element) {
-   $("#results").append('<ul>"' + element.name + '" - ' +
-   element.artists[0].name + '</>');
+   $("#results").append('<ul><li>"' + element.name + '" - ' +
+   element.artists[0].name + '</li><ul/>');
    // bug: searching by artist also populates #results when there aren't enough
   //  song titles
 });
