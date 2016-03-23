@@ -8,6 +8,7 @@ $(document).on('ready', function() {
 
   $("form").on("submit", function(event){
     event.preventDefault();
+    $('#results').val('');
     searchTrack();
   });
 
@@ -23,10 +24,11 @@ function searchTrack(){
 
 function onSuccess(json){
   console.log(json);
+
   var trackResults = json.tracks.items;
   trackResults.forEach(function(element) {
-   $("#results").append('<ul>"' + element.name + '" - ' + element.artists[0].name + '</>');
-   //tracks.items (has inside array)
+   $("#results").append('<ul>"' + element.name + '" - ' +
+   element.artists[0].name + '</>');
 });
 }
 
