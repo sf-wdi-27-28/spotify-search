@@ -25,7 +25,7 @@ $(document).on('ready', function() {
   function onSuccess(json){
     console.log(json);
     json.tracks.items.forEach( function(element){
-      $('#results').append("<li>" + element.artists[0].name+ " " + element.name + "</li>");
+      $('#results').append("<li>" + '<img src="' + element.album.images[0].url + '">' + " " + element.artists[0].name+ " " + element.name + "</li>");
       console.log(element);
     });
 
