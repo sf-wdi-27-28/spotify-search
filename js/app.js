@@ -1,12 +1,14 @@
 // wait for DOM to load before running JS
 $(document).on('ready', function() {
 
+// form submit function to feed into onSuccess function
   $("form").on("submit", function (event) {
     event.preventDefault();
-    $("#track").empty();
+    $("#tracks").empty();
     callTrack();
   });
 
+// wrap ajax call into callTrack function
   function callTrack() {
     $.ajax({
       type: 'GET',
@@ -16,13 +18,17 @@ $(document).on('ready', function() {
       error: onError,
     });
 
+// define onSuccess function to append and create list item with artist name and song title
     function onSuccess(data) {
-      console.log(data.tracks.items);
       data.tracks.items.forEach(function(element) {
-        $("#tracks").append("<li>" + element.artists[0].name + " - " + element.name+"</li>");
+        $("#tracks").append("<li>" + element.artists[0].name + " - " +
+        element.name + "<p>" + '<img src="' +
+        element.album.images[2].url + '">' + "</p>" + "</li>");
+
       });
     }
 
+// define function for onError
     function onError(xhr, status, errorThrown) {
       alert("Sorry, there was a problem!");
       console.log("Error: " + errorThrown);
