@@ -1,1 +1,4 @@
 /* put custom styles in this file */
+ul {
+  list-style-type: none;
+}
