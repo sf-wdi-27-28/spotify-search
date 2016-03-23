@@ -5,28 +5,35 @@ $(document).on('ready', function() {
   // check to make sure JS is loaded
   console.log('JS is loaded!');
 
-  $("#spotify-track").on("click", function findSong(e){
-    console.log(e);
+  $('#spotify-track').on("submit", function(e) {
+    console.log('submit');
+    e.preventDefault();
+    var tracks = $('#spotify-track').serialize();
+
+
     $.ajax({
       method:'GET',
       url:"https://api.spotify.com/v1/search",
-      data: $(this).serialize(),
+      data: $("form").serialize(),
       success: onSuccess,
       error: onError
     });
   });
 
-function onSuccess(json){
-json.tracks.forEach( function findTracks(element){
-   $('#results').append(element);
+
+
+  function onSuccess(json){
     console.log(json);
-  });
+    json.tracks.items.forEach( function(element){
+      $('#results').append("<li>" + element.artists[0].name+ " " + element.name + "</li>");
+      console.log(element);
+    });
+
+  }
 
   function onError (xhr, status, errorThrown){
-      alert("Sorry, there was a problem!");
-      console.log("Error: " + errorThrown);
-      console.log("Status: " + status);
-      console.log(xhr);
-    }
+    console.log("Error: " + errorThrown);
+    console.log("Status: " + status);
+    console.log(xhr);
   }
 });
