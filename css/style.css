@@ -1,1 +1,14 @@
 /* put custom styles in this file */
+#search{
+  width: 500px;
+  height: 30px;
+  font-size: 20px;
+  align: center;
+}
+
+.btn-success{
+  width: 500px;
+  height: 40px;
+  font-size: 15px;
+  align: center;
+}
