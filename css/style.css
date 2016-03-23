@@ -1,1 +1,4 @@
 /* put custom styles in this file */
+.col-md-6 {
+  border: black;
+}
