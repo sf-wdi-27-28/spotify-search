@@ -8,7 +8,6 @@ $(document).on('ready', function() {
 
   $("form").on("submit", function(event){
     event.preventDefault();
-    $('#results').val('');
     searchTrack();
   });
 
@@ -24,11 +23,13 @@ function searchTrack(){
 
 function onSuccess(json){
   console.log(json);
-
+  $('#results').val(); //not working as expected
   var trackResults = json.tracks.items;
   trackResults.forEach(function(element) {
    $("#results").append('<ul>"' + element.name + '" - ' +
    element.artists[0].name + '</>');
+   // bug: searching by artist also populates #results when there aren't enough
+  //  song titles
 });
 }
 
