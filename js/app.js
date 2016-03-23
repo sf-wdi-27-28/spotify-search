@@ -31,7 +31,7 @@ var artistName;
 function onSuccess(json) {
   console.log(json.tracks.items);
   json.tracks.items.forEach(function (element){
-    $("#results").append("<li>" + element.artists[0].name+ "-" + element.name +"</li>");
+    $("#results").append("<li>" + element.name + " by " + element.artists[0].name+ "</li>");
   });
 }
 
