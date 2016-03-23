@@ -30,7 +30,15 @@
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <h1 class="text-center">Spotify Search</h1>
-        <div id="results"></div>
+        <form id='spotify-track'>
+          <input class="form-control" name="q" placeholder="Song Title">
+          <input type="hidden" name="type" value="track">
+          <input type="submit" class="btn btn-block btn-success" value="Search">
+        </form>
+        <div id="results">
+          <ul>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
