@@ -1,31 +1,33 @@
 // wait for DOM to load before running JS
 $(document).on('ready', function() {
 
+  var spoUrl= "https://api.spotify.com/v1/search";
+
+  $(".Search").on("submit", function (data) {
+    event.preventDefault();
+getSongs();
+   $("#results").append( "<ul>"+"<il>" + json.tracks.album.id + "</li>"+"</ul>" );
+
+
+  });
   // check to make sure JS is loaded
   console.log('JS is loaded!');
-var spoUrl= "https://api.spotify.com/v1/search";
 
 
+function getSongs() {
   $.ajax(
               {
     method: 'GET',
        url: spoUrl,
-    artists: {
-          q:"artistName",
-       type:"track",
-            },
-    dataType: "json",
+    data: $(".Search").serialize(),
     success: onSuccess
-              }
+                }
 
-);
+  );
+}
 });
-$(".Search").on("submit", function () {
-  event.preventDefault();
-  $("#result").append("<ul>"+"<il>" + json.artists.items  +"</li>"+"</ul>");
 
-  console.log(json.artists);
-});
-function onSuccess() {
-console.log();
+function onSuccess(json) {
+  console.log(json.tracks.items.album);
+  console.log(json);
 }
