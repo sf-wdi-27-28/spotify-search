@@ -23,8 +23,7 @@ function searchTrack(){
 
 function onSuccess(json){
   console.log(json);
-  $('#results').val(); //not working as expected
-  // also tried: $('#results').trigger("reset");
+  $('#results').text("");
   var trackResults = json.tracks.items;
   trackResults.forEach(function(element) {
    $("#results").append('<ul><li>"' + element.name + '" - ' +
