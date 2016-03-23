@@ -17,7 +17,7 @@ $(document).on('ready', function() {
 function onSuccess( json ) {
     console.log(json);
     // for (i=0;i<25;i++){
-      $('#results').append('<img src =' + json.tracks.items.albums.images.url + '>');
+      $('#results').append('<img src =' + json.items.albums.images.url + '>');
     // }
 }
 
