@@ -14,8 +14,6 @@ $(document).on('ready', function() {
     spotifyResult.empty();
     getData();
   });
-  spotifyForm[0].reset();
-  spotifySearch.focus();
 });
 
 function getData(){
@@ -33,12 +31,14 @@ function onSuccess(data) {
 
   trackResults.forEach(function(result,index){
     var trackInfo = {
+      image: result.album.images[0].url,
       artist: result.artists[0].name,
       name: result.name,
       previewUrl: result.preview_url
     };
 
-    var trackDiv = '<br><div>' + trackInfo.name + " by " + trackInfo.artist + '</div><br>';
+    var trackDiv = '<div><img src="' +trackInfo.image + '">' + '</div><br>' +
+    '<br><div>' + trackInfo.name + " by " + trackInfo.artist + '</div><br>';
     $('#results').append(trackDiv);
   });
 }
