@@ -38,25 +38,18 @@ $(document).on('ready', function() {
     $term.focus();
   });
 
-
-  // handles data received from spotify
   function handleAppleData(data) {
     console.log("received data:", data);
-    // track results are in an array called `items`
-    // which is nested in the `tracks` object
+
     var termResults = results.artistName.collectionName.collectionExplicitness.trackName.artworkUrl30.previewUrl.artistViewUrl;
     console.log(termResults);
 
     // hide loading gif
     $loading.hide();
 
-    // only append results if there are any
     if (termResults.length > 0) {
-
-      // iterate through results
       termResults.forEach(function (result, index) {
 
-        // build object of data we want in our view
         var termData = {
           albumArt: results.artworkUrl30,
           artist: results.artistsName,
@@ -79,5 +72,4 @@ $(document).on('ready', function() {
       $results.append('<p class="text-center">No results</p>');
     }
   }
-
 });
