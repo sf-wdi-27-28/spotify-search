@@ -5,5 +5,28 @@ $(document).on('ready', function() {
   console.log('JS is loaded!');
 
   // your code here
+  $.ajax({
+      method: "GET",
+      url: "https://api.spotify.com/v1/search",
+      data: $("form").serialize(),
+      success: onSuccess,
+      error: onError
 
+  });
+
+function onSuccess( json ) {
+    console.log(json);
+    for (i=0;i<25;i++){
+      $('#results').append('<img src =' + json.tracks.items.albums.images.url + '>');
+    }
+}
+
+function onError(xhr, status, errorThrown) {
+    alert("Sorry, there was a problem!");
+    console.log("Error: " + errorThrown);
+    console.log("Status: " + status);
+    console.dir(xhr);
+}
+
+console.log("form");
 });
