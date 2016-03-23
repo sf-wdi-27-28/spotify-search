@@ -23,13 +23,22 @@
 
   <!-- custom script -->
   <script type="text/javascript" src="js/app.js"></script>
-
+  <title>
+    SPOTIFY
+  </title>
 </head>
 <body>
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
-        <h1 class="text-center">Spotify Search</h1>
+        <form class="form-inline">
+        <label>Spotify Search</label>
+            <input type="text" class="form-control q" name="q" value="Michael Jackson" placeholder="Search Spotify">
+				    <input type="hidden" name="type" value="artist">
+            <input type="hidden" name="client_id" value="b70cccba32be492db5298f47d1c4a7cf">
+            <input type="hidden" name="client_secret" value="919a872c663c441dac2a349f5f1f5943">
+				    <input type="submit" value="Go!" class="btn btn-primary">
+        </form>
         <div id="results"></div>
       </div>
     </div>
