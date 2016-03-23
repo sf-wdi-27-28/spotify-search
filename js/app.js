@@ -19,9 +19,10 @@ $(document).on('ready', function() {
     });
 
 // define onSuccess function to append and create list item with artist name and song title
+// and album art
     function onSuccess(data) {
       data.tracks.items.forEach(function(element) {
-        $("#tracks").append(element.artists[0].name + " - " +
+        $("#tracks").append(element.artists.name + " - " +
         element.name + "<p>" + '<img src="' +
         element.album.images[2].url + '">' + "</p>");
 
