@@ -1,0 +1,44 @@
+<DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Eviee Search</title>
+
+  <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  <script type="text/javascript" src="http://code.jquery.com/jquery-2.2.2.min.js" integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>
+
+  <script type="text/javascript" src="js/app.js"></script>
+
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <h1 class="text-center">Hi, I'm Eviee!</h1>
+        <p align="center">Whats your favorite song?</p>
+
+        <br>
+        <form id="appleSearch">
+          <div class="form-ation">
+            <input class="form-control" type="term" placeholder="Search Apple Music" autofocus>
+          </div>
+          <div class="form-ation">
+            <input type="submit" class="btn btn-block btn-success" value="Search">
+          </div>
+        </form>
+        <div class="text-center" id="loading">
+          <img src="images/loading.gif" width="80">
+        </div>
+        <br>
+        <div id="results"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
