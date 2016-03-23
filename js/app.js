@@ -25,9 +25,6 @@ $(document).on('ready', function() {
 
 });
 
-var trackTitle;
-var artistName;
-
 function onSuccess(json) {
   console.log(json.tracks.items);
   json.tracks.items.forEach(function (element){
@@ -36,5 +33,5 @@ function onSuccess(json) {
 }
 
 function onError(xhr, status, errorThrown) {
-  alert("Sorry, there was a problem!");
+  alert("Don't search for nothing!");
 }
