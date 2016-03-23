@@ -3,18 +3,23 @@ $(document).on('ready', function() {
 
   console.log('JS is loaded!');
 
-  var apiUrl = 'https://api.spotify.com/v1/search?type=track';
+  var apiUrl = 'https://api.spotify.com/v1/search?type=track&q=';
   $('.goGet').on('submit', function (e){
-    var data = $(this).sterialize();
+    var searchTrack = $('#special').val();
+    event.preventDefault();
     $.ajax({
       method: 'GET',
-      url: apiUrl,
+      url: apiUrl+searchTrack,
       success: onSuccess,
       error: noGood
     });
   });
   function onSuccess(searchResults){
-    console.log("may data is" + searchResults);
+    console.log("may data is", searchResults);
+    
+  }
+  function noGood(mess){
+    console.log("no");
   }
 
-});
+}); //end of doc ready
