@@ -37,20 +37,6 @@ function onSuccess (json) {
       );
     }
   );
-
-
-  // json.data.artists.items.forEach(
-  // function logItems(content){
-  // console.log(content.name);
-  // });
-
-
-  // json.data.forEach(
-  //   function (element){
-  //     // console.log(element);
-  //     $('.gif-gallery').append('<img src="'+ element.images.fixed_height.url+'">');
-  //   }
-  // );
 }
 
 function onError(xhr, status, errorThrown) {
