@@ -22,7 +22,7 @@ function getInfo() {
 function getTrackInfo(blarg) {
   $('.info').remove();
   blarg.tracks.items.forEach(function(element){
-    $('#results').append('<li class="info">' + element.name + ' by ' + element.artists[0].name + '</li>');
+    $('#results').append('<div><img src="' + element.album.images[2].url + '" class="img-rounded"></div>'+ '<div><p><strong>' + element.name + '</strong> by ' + element.artists[0].name + '</p></div></div><hr>');
   });
 }
 
