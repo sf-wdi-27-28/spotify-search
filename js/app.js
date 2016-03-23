@@ -33,11 +33,7 @@ $(document).on('ready', function() {
     $("#results").text("");
     $("#searchResults").text("Results for " + $("#track").val());
     json.tracks.items.forEach(function(element) {
-      element.artists.forEach(function(art) {
-        var artistName = art.name;
-        return artistName;
-      });
-      $("#results").append("<div class='container'><div class='row'><div class='col-sm-3 albumArt'><img src=" + element.album.images[1].url + "></div><div class=col-sm-9><div class='col-sm-4 song'><p>Song: "+element.name+"</p></div><div class='col-sm-4 album'><p>Album: "+element.album.name + "</p></div><div class='col-sm-4 artist'><p>Artist: " + element.artists[0].name + "</p></div></div></div></div>");
+      $("#results").append("<div class='container'><div class='row'><div class='col-sm-3 albumArt'><img src=" + element.album.images[1].url + "></div><div class=col-sm-9><div class='col-sm-3 song'><p>Song: "+element.name+"</p></div><div class='col-sm-3 album'><p>Album: "+element.album.name + "</p></div><div class='col-sm-3 artist'><p>Artist: " + element.artists[0].name + "</p></div><div class='col-sm-3 play'><a href=" + element.preview_url + ">Play</a></div></div></div>");
     });
   }
 
