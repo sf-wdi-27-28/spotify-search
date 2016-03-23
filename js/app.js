@@ -5,6 +5,7 @@ $(document).on('ready', function() {
 
   var apiUrl = 'https://api.spotify.com/v1/search?type=track&q=';
   $('.goGet').on('submit', function (e){
+    $('.result').remove();
     var searchTrack = $('#special').val();
     event.preventDefault();
     $.ajax({
@@ -15,8 +16,12 @@ $(document).on('ready', function() {
     });
   });
   function onSuccess(searchResults){
+    var path = searchResults.tracks.items;
     console.log("may data is", searchResults);
-    
+    console.log(searchResults.tracks.items);
+    path.forEach(function (e){
+      $('#results').append("<li class='result'>"+e.artists[0].name+": "+e.name+"</li>");
+    });
   }
   function noGood(mess){
     console.log("no");
