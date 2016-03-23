@@ -1,1 +1,24 @@
 /* put custom styles in this file */
+.song-list{
+  font-size: 20px;
+  height: 100%;
+}
+#results{
+  margin-top: 20px;
+  height: 300px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.songs{
+  padding-left: 50px;
+  padding-right: 10px;
+  margin-bottom: 5px;
+}
+
+a{
+  color: white;
+}
+
+span{
+  font-weight: bold;
+}
