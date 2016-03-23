@@ -8,7 +8,7 @@ $(document).on('ready', function() {
   $.ajax({
       method: "GET",
       url: "https://api.spotify.com/v1/search",
-      data: $("form").serialize(),
+      tracks: $("form").serialize(),
       success: onSuccess,
       error: onError
 
@@ -16,9 +16,9 @@ $(document).on('ready', function() {
 
 function onSuccess( json ) {
     console.log(json);
-    for (i=0;i<25;i++){
+    // for (i=0;i<25;i++){
       $('#results').append('<img src =' + json.tracks.items.albums.images.url + '>');
-    }
+    // }
 }
 
 function onError(xhr, status, errorThrown) {
