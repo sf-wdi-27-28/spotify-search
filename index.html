@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link href='https://fonts.googleapis.com/css?family=Cuprum' rel='stylesheet' type='text/css'>
   <meta charset="UTF-8">
 
   <!-- set viewport to device width to help make site responsive -->
@@ -18,18 +19,35 @@
   <!-- Note: using subresource integrity; see: https://en.wikipedia.org/wiki/Subresource_Integrity -->
   <script type="text/javascript" src="http://code.jquery.com/jquery-2.2.2.min.js" integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>
 
-  <!-- handlebars -->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
-
   <!-- custom script -->
   <script type="text/javascript" src="js/app.js"></script>
 
+  <link href='https://fonts.googleapis.com/css?family=Cuprum' rel='stylesheet' type='text/css'>
+
 </head>
 <body>
+  <body background= "https://i.ytimg.com/vi/yvqwrnfyPFA/maxresdefault.jpg">
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
+        <div class="my container">
         <h1 class="text-center">Spotify Search</h1>
+        <p>
+          <img src="http://www.psychework.com/img/spotify.png" alt="Spotify";/>
+        </p>
+        <br>
+        <form id="spotify-search">
+          <div class="form-group">
+            <input class="form-control" id="track" placeholder="Song Title" autofocus>
+          </div>
+          <div class="form-group">
+            <input type="submit" class="btn btn-block btn-success" value="Search">
+          </div>
+        </form>
+        <div class="text-center" id="loading">
+          <img src="images/loading.gif" width="80">
+        </div>
+        <br>
         <div id="results"></div>
       </div>
     </div>
